@@ -8,7 +8,7 @@ using URLShortener.Core.Results;
 
 namespace SystemDesign_URLShortener.Endpoints.V1.URLs;
 
-public class Shorten : EndpointBaseSync.WithRequest<ShortenerCommand>.WithActionResult<ShortenerResult>
+public class Shorten : EndpointBaseAsync.WithRequest<ShortenerCommand>.WithActionResult<ShortenerResult>
 {
     private readonly AppDbContext _context;
     private readonly IMapper _mapper;
@@ -20,13 +20,13 @@ public class Shorten : EndpointBaseSync.WithRequest<ShortenerCommand>.WithAction
     }
 
     [HttpPost("/api/shorten")]
-    public override ActionResult<ShortenerResult> Handle(ShortenerCommand request)
+    public override async Task<ActionResult<ShortenerResult>> HandleAsync(ShortenerCommand request, CancellationToken cancellationToken = default)
     {
         var url = _mapper.Map<URL>(request);
 
         url.ShortUrl = "shorty";
-        _context.URLs.Add(url);
-        _context.SaveChanges();
+        await _context.URLs.AddAsync(url, cancellationToken: cancellationToken);
+        await _context.SaveChangesAsync(cancellationToken);
 
         var result = _mapper.Map<ShortenerResult>(url);
         return Ok(result);

@@ -1,10 +1,11 @@
 ﻿using Ardalis.ApiEndpoints;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SystemDesign_URLShortener.Data;
 
 namespace SystemDesign_URLShortener.Endpoints.V1.URLs;
 
-public class Get : EndpointBaseSync.WithRequest<string>.WithActionResult
+public class Get : EndpointBaseAsync.WithRequest<string>.WithActionResult
 {
     private readonly AppDbContext _context;
 
@@ -14,15 +15,13 @@ public class Get : EndpointBaseSync.WithRequest<string>.WithActionResult
     }
 
     [HttpGet("/api/{shortUrl}", Name = "Redirecter")]
-    public override ActionResult Handle(string shortUrl)
+    public override async Task<ActionResult> HandleAsync(string shortUrl, CancellationToken cancellationToken = default)
     {
-        var urlInDb = _context.URLs.SingleOrDefault(x => x.ShortUrl == shortUrl);
+        var urlInDb = await _context.URLs.SingleOrDefaultAsync(x => x.ShortUrl == shortUrl, cancellationToken: cancellationToken);
 
         if (urlInDb is null)
             return NotFound();
 
         return RedirectPermanent($"{urlInDb.LongUrl}");
     }
-
-    
 }
