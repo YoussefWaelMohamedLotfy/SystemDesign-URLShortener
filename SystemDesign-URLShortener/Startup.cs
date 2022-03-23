@@ -1,5 +1,7 @@
-﻿using Swashbuckle.AspNetCore.Filters;
+﻿using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Filters;
 using System.Reflection;
+using SystemDesign_URLShortener.Data;
 
 namespace SystemDesign_URLShortener;
 
@@ -15,6 +17,9 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
+
+        services.AddDbContext<AppDbContext>(options => 
+            options.UseSqlServer(Configuration.GetConnectionString("SqlServerConnection")));
 
         services.AddAutoMapper(typeof(Startup));
 
