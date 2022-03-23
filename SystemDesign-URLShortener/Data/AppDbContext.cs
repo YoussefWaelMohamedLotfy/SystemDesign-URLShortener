@@ -10,4 +10,11 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<URL> URLs { get; set; } = default!;
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(Startup).Assembly);
+    }
 }

@@ -39,7 +39,7 @@ namespace SystemDesign_URLShortener.Data.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("URLs");
+                    b.ToTable("URLs", (string)null);
                 });
 #pragma warning restore 612, 618
         }
