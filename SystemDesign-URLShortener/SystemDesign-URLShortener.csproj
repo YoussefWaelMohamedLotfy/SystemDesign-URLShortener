@@ -21,4 +21,8 @@
 		<PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="7.0.2" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\URLShortener.Core\URLShortener.Core.csproj" />
+	</ItemGroup>
+
 </Project>
