@@ -129,7 +129,7 @@ public static class Base62Converter
 
         // Due to the terminator, we require at least 2 bytes to decode.
         if (string.IsNullOrEmpty(base62) || base62.Length < 2)
-            throw new ArgumentException(nameof(base62));
+            throw new ArgumentException("String is Empty or less than 2 characters", nameof(base62));
 
         var offset = 0;
         var stream = new MemoryStream();

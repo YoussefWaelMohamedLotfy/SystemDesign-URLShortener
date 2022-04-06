@@ -22,6 +22,20 @@ public class Shorten : EndpointBaseAsync.WithRequest<ShortenerCommand>.WithActio
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
 
+    /// <summary>
+    /// Shortens URLs using MD5 Hashing
+    /// </summary>
+    /// <remarks>
+    /// ## Characterisitcs of Hashing + Collision Resolution
+    ///   + Fixed short URL length.
+    ///   + It does not need a unique ID generator.
+    ///   + Collision is possible and must be resolved.
+    ///   + It is impossible to figure out the next available short URL
+    ///     because it does not depend on ID.
+    /// </remarks>
+    /// <param name="request"></param>
+    /// <param name="cancellationToken"></param>
+    /// <response code="200">Shortening Success</response>
     [HttpPost("/api/shorten/hash")]
     public override async Task<ActionResult<ShortenerResult>> HandleAsync(ShortenerCommand request, CancellationToken cancellationToken = default)
     {

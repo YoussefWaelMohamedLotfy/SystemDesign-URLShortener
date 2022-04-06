@@ -20,6 +20,20 @@ public class Shorten : EndpointBaseAsync.WithRequest<ShortenerCommand>.WithActio
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
 
+    /// <summary>
+    /// Shortens URLs using Base62 Conversion
+    /// </summary>
+    /// <remarks>
+    /// ## Characterisitcs of Base62 Conversion
+    ///   + The short URL length is *not* fixed. It goes up with the ID.
+    ///   + This option depends on a unique ID generator.
+    ///   + Collision is impossible because ID is unique.
+    ///   + It is easy to figure out the next available short URL if ID increments
+    ///     by 1 for a new entry. **This can be a security concern.**
+    /// </remarks>
+    /// <param name="request"></param>
+    /// <param name="cancellationToken"></param>
+    /// <response code="200">Shortening Success</response>
     [HttpPost("/api/shorten")]
     public override async Task<ActionResult<ShortenerResult>> HandleAsync(ShortenerCommand request, CancellationToken cancellationToken = default)
     {
