@@ -1,10 +1,7 @@
 ﻿using Ardalis.ApiEndpoints;
-using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using SystemDesign_URLShortener.Data;
-using URLShortener.Core.Entities;
 
 namespace SystemDesign_URLShortener.Endpoints.V1.URLs;
 
