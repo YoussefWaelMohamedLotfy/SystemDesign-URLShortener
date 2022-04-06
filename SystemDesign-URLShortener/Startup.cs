@@ -19,7 +19,7 @@ public class Startup
         services.AddControllers();
 
         services.AddDbContext<AppDbContext>(options => 
-            options.UseSqlServer(Configuration.GetConnectionString("SqlServerConnection")));
+            options.UseSqlite(Configuration.GetConnectionString("SqliteConnection")));
 
         services.AddAutoMapper(typeof(Startup));
 

@@ -4,7 +4,7 @@
 
 namespace SystemDesign_URLShortener.Data.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class ChangeDbToSqlite : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,10 +12,10 @@ namespace SystemDesign_URLShortener.Data.Migrations
                 name: "URLs",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ShortUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LongUrl = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ShortUrl = table.Column<string>(type: "TEXT", nullable: false),
+                    LongUrl = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
