@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "URLShortener.Core", "URLSho
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SDKs", "SDKs", "{F83613B3-23FD-4463-B494-EF938934BD1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLShortener.SDK", "SDKs\URLShortener.SDK\URLShortener.SDK.csproj", "{C389EA97-17C4-476E-95E6-E9034927DDE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "URLShortener.SDK", "SDKs\URLShortener.SDK\URLShortener.SDK.csproj", "{C389EA97-17C4-476E-95E6-E9034927DDE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "Apps\ConsoleClient\ConsoleClient.csproj", "{B2CE143E-6267-4E7C-93E7-9B969E332B1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,12 +33,17 @@ Global
 		{C389EA97-17C4-476E-95E6-E9034927DDE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C389EA97-17C4-476E-95E6-E9034927DDE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C389EA97-17C4-476E-95E6-E9034927DDE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2CE143E-6267-4E7C-93E7-9B969E332B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2CE143E-6267-4E7C-93E7-9B969E332B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2CE143E-6267-4E7C-93E7-9B969E332B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2CE143E-6267-4E7C-93E7-9B969E332B1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C389EA97-17C4-476E-95E6-E9034927DDE2} = {F83613B3-23FD-4463-B494-EF938934BD1E}
+		{B2CE143E-6267-4E7C-93E7-9B969E332B1A} = {99ED14A7-2966-421D-8DAF-EEA75896066A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B4ACF68C-776B-40E7-8397-1CABED766391}

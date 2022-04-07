@@ -26,7 +26,7 @@ public class Get : EndpointBaseAsync.WithRequest<string>.WithActionResult
     /// 
     /// Each redirection method has its pros and cons. If the priority is to reduce the server load,
     /// using 301 redirect makes sense as only the first request of the same URL is sent to URL
-    /// shortening servers.However, if analytics is important, 302 redirect is a better choice as it can
+    /// shortening servers. However, if analytics is important, 302 redirect is a better choice as it can
     /// track click rate and source of the click more easily.
     /// </remarks>
     /// <param name="shortUrl">The Shortened URL</param>
