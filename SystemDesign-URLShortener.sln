@@ -1,11 +1,16 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemDesign-URLShortener", "SystemDesign-URLShortener\SystemDesign-URLShortener.csproj", "{B58E9E1B-02D8-42BC-B62F-6A0BE08DDCAD}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{99ED14A7-2966-421D-8DAF-EEA75896066A}"
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4ACF68C-776B-40E7-8397-1CABED766391}
+	EndGlobalSection
+EndGlobal
+DE8}") = "Apps", "Apps", "{99ED14A7-2966-421D-8DAF-EEA75896066A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "URLShortener.Core", "URLShortener.Core\URLShortener.Core.csproj", "{67A5A0D5-778A-42C9-B474-B401C66E7BBD}"
 EndProject
