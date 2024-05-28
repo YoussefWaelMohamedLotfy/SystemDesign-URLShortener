@@ -1,6 +1,6 @@
 ﻿namespace UrlShortener_API.Data;
 
-internal sealed class ShortenedUrl
+public sealed class ShortenedUrl
 {
     public Guid Id { get; set; }
 
