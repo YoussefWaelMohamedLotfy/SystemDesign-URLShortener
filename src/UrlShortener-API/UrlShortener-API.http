@@ -1,0 +1,13 @@
+@UrlShortener_API_HostAddress = http://localhost:5212
+@shortCode = abc123
+
+GET {{UrlShortener_API_HostAddress}}/{{shortCode}}
+Accept: application/json
+
+###
+
+POST {{UrlShortener_API_HostAddress}}/shorten
+Content-Type: application/json
+{
+  "url": "https://en.wikipedia.org/wiki/Systems_design"
+}
