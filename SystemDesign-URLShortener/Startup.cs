@@ -22,7 +22,7 @@ public class Startup
         services.AddDbContext<AppDbContext>(options => 
             options.UseSqlite(Configuration.GetConnectionString("SqliteConnection")));
 
-        services.AddAutoMapper(typeof(Startup));
+        services.AddAutoMapper(x => x.AddProfile<AutoMappingConfig>());
 
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(swaggerOptions =>
